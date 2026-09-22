@@ -1,0 +1,19 @@
+>>>  version: '3.8't
+       
+services:
+backend:
+  build: ./python_code
+    ports:
+       - "5000:5000"
+       environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+        volumes:
+- ./python_code:/python_code
+
+frontend:
+build: .
+ports:
+- "3000:3000
+volumes:
+...             - .:/app
+...
